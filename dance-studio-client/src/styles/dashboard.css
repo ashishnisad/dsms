@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+* { 
+  font-family: 'Outfit', sans-serif; 
+}
+
+:root {
+  --primary: #FF6B6B;
+  --secondary: #4ECDC4;
+  --accent: #FFE66D;
+  --dark-bg: #0A0E27;
+  --card-bg: #1a2247;
+  --text-primary: #ffffff;
+  --text-secondary: #b0bec5;
+  --success: #2ecc71;
+  --warning: #f39c12;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #FF6B6B, #4ECDC4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { opacity: 0.8; }
+
+/* Smooth transitions for all interactive elements */
+.nav-btn {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-secondary);
+}
+.nav-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  color: var(--text-primary);
+}
+.nav-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  box-shadow: 0 15px 50px -10px rgba(255, 107, 107, 0.4);
+  color: white;
+}
+
+/* Card animations */
+.card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeSlideUp 0.5s ease-out forwards;
+  background: linear-gradient(135deg, rgba(26, 34, 71, 0.8), rgba(26, 34, 71, 0.5));
+  border: 1px solid rgba(78, 205, 196, 0.15);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px -15px rgba(255, 107, 107, 0.25);
+  border-color: rgba(78, 205, 196, 0.3);
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+@keyframes circleGrow {
+  from { stroke-dashoffset: 283; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(255, 107, 107, 0.4); }
+}
+
+/* Section animations */
+.section-content {
+  animation: fadeSlideUp 0.4s ease-out forwards;
+}
+
+/* Modal animations */
+.modal-overlay {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+.modal-content {
+  animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  background: linear-gradient(135deg, rgba(26, 34, 71, 0.95), rgba(26, 34, 71, 0.7));
+  border: 1px solid rgba(78, 205, 196, 0.2);
+}
+
+/* List item stagger animation */
+.list-item {
+  animation: slideInRight 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* Progress bar animation */
+.progress-bar {
+  animation: progressFill 1s ease-out forwards;
+}
+
+/* Circular progress */
+.circle-progress {
+  animation: circleGrow 1.5s ease-out forwards;
+}
+
+/* Hover effects for interactive elements */
+.interactive-row {
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.05), rgba(255, 107, 107, 0.05));
+}
+.interactive-row:hover {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(255, 107, 107, 0.1));
+  transform: translateX(4px);
+  border-left: 3px solid var(--primary);
+}
+
+/* Calendar day hover */
+.calendar-day {
+  transition: all 0.2s ease;
+  background: linear-gradient(135deg, rgba(26, 34, 71, 0.6), rgba(26, 34, 71, 0.4));
+  border: 1px solid rgba(78, 205, 196, 0.1);
+}
+.calendar-day:hover:not(.empty) {
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.3), rgba(78, 205, 196, 0.3));
+  transform: scale(1.1);
+  border-color: rgba(78, 205, 196, 0.5);
+}
+.calendar-day.has-class {
+  background: linear-gradient(135deg, rgba(78, 205, 196, 0.3), rgba(255, 107, 107, 0.3));
+  border-color: rgba(78, 205, 196, 0.3);
+}
+
+/* Pulse animation for notifications */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+.pulse { animation: pulse 2s infinite; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: linear-gradient(135deg, rgba(26, 34, 71, 0.7), rgba(26, 34, 71, 0.4));
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(78, 205, 196, 0.15);
+}
+
+/* Status badges */
+.status-active { background: rgba(46, 204, 113, 0.2); color: #2ecc71; }
+.status-pending { background: rgba(243, 156, 18, 0.2); color: #f39c12; }
+.status-expired { background: rgba(231, 76, 60, 0.2); color: #e74c3c; }

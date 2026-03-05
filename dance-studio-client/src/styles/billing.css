@@ -1,0 +1,14 @@
+.billing-container {
+  max-width: 1200px;
+}
+
+.invoices-table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.invoices-table button {
+  margin: 5px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
